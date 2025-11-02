@@ -1,1 +1,1 @@
-# -RISC-V-Processor-with-Custom-AI-Instruction-Extensions
+# RISC-V-Processor-with-Custom-AI-Instruction-Extensions
