@@ -26,16 +26,16 @@ module test_riscV;
         // -----------------------------
         // LOAD PROGRAM INTO IMEM
         // -----------------------------
-        dut.IMEM.mem[0]  = 32'h040300b7;
-        dut.IMEM.mem[1]  = 32'h20108093;
-        dut.IMEM.mem[2]  = 32'h08070137;
-        dut.IMEM.mem[3]  = 32'h60510113;
-        dut.IMEM.mem[4]  = 32'h00400193;
-        dut.IMEM.mem[5]  = 32'h2020850b;
-        dut.IMEM.mem[6]  = 32'hfff18193;
-        dut.IMEM.mem[7]  = 32'hfe019ce3;
-        dut.IMEM.mem[8]  = 32'h00a02023;
-        dut.IMEM.mem[9]  = 32'h0180066f;
+        dut.IMEM.mem[0]  = 32'h040300b7;  // lui x1, 0x4030
+        dut.IMEM.mem[1]  = 32'h20108093;  // addi x1, x1, 513
+        dut.IMEM.mem[2]  = 32'h08070137;  // lui x2, 0x8070
+        dut.IMEM.mem[3]  = 32'h60510113;  // addi x2, x2, 1541
+        dut.IMEM.mem[4]  = 32'h00400193;  // addi x3, x0, 4 
+        dut.IMEM.mem[5]  = 32'h2020850b;  // mac x10, x1, x2      x2 = { 05, 06, 07, 08 } (INT8 packed), x1 = { 01, 02, 03, 04 } (INT8 packed)
+        dut.IMEM.mem[6]  = 32'hfff18193;  // addi x3, x3, -1
+        dut.IMEM.mem[7]  = 32'hfe019ce3;  // bne x3, x0, -8
+        dut.IMEM.mem[8]  = 32'h00a02023;  // sw x10, 0(x0)
+        dut.IMEM.mem[9]  = 32'h0180066f;  // jal x12, 24
 
         // Release reset
         #20 rst = 0;
