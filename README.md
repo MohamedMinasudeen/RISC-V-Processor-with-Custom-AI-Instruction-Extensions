@@ -85,9 +85,9 @@ The design is verified using a **directed RTL testbench** with:
 The waveform below shows execution of the custom MAC instruction,
 including loop iterations, accumulator update, and final memory store.
 
-![MAC Instruction Waveform](docs/MAC_Output.png)
---
-![RISC_V Waveform](docs/Risc_V.png)
+[MAC Instruction Waveform](docs/MAC_Output.png)
+
+[RISC_V Waveform](docs/Risc_V.png)
 
 ---
 
